@@ -1,18 +1,19 @@
-.heading h1{
+.heading .row h1{
   color: blue;
   text-align: center;
 }
 
-.heading h2{
+.heading .row h2{
   color: red;
   text-align: center;
 }
 
-.body-container {
+.head-left-section {
   display: block;
 }
 
-.body-container a:link, a:visited {
+.head-left-section a:link, a:visited {
+  display: block;
   color: blue;
 }
 
