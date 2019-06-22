@@ -21,3 +21,7 @@
   height: 100px;
   display: block;
 }
+
+.row h2{
+  text-align: center;
+}
