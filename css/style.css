@@ -1,7 +1,7 @@
-.heading {
+.heading h1{
   color: blue;
 }
 
-.body-container {
+.body-container h2{
   color: red;
 }
