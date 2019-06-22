@@ -15,3 +15,9 @@
 .body-container a:link, a:visited {
   color: blue;
 }
+
+.login-area, .create-login-area{
+  width: 300px;
+  height: 100px;
+  display: block;
+}
