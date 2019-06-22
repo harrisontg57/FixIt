@@ -11,3 +11,7 @@
 .body-container {
   display: block;
 }
+
+.body-container a:link, a:visited {
+  color: blue;
+}
