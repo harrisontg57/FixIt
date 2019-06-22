@@ -2,6 +2,10 @@
   color: blue;
 }
 
-.body-container h2{
+.heading h2{
   color: red;
+}
+
+.body-container {
+  display: block;
 }
