@@ -5,14 +5,28 @@
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
-        create user page, go back to <a href="index.html">index</a>
-        <div class="create-login-area">                
-            <label for="login-username">Username:</label>
-            <textarea id="login-username" cols="30" rows="1"></textarea>
-            <label for="login-password">Password:</label>
-            <textarea id="login-password" cols="30" rows="1"></textarea>
-            <button onclick="submitNewUser('login-username', 'login-password')">Create Account</button>
+        <div class="login-header">
+            <h1>Create Account Page</h1>
         </div>
+        create user page, go back to <a href="index.html">index</a>
+        <div class=row>
+            <div class="createUser-left col">
+                left side
+            </div>
+            <div class="create-login-area col-6">    
+                <div class="create-section mx-auto">
+                    <label for="login-username" id="username-create">Username:</label>
+                    <textarea id="login-username" cols="25" rows="1"></textarea>
+                    <label for="login-password" id="password-create">Password:</label>
+                    <textarea id="login-password" cols="25" rows="1"></textarea>
+                    <button id="createButton" onclick="submitNewUser('login-username', 'login-password')">Create Account</button>
+                </div>            
+            </div>
+            <div class="createUser-right col">
+                right side
+            </div>
+        </div>
+
         <script src="javascript/createUser.js"></script>
     </body>
 </html>

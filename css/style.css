@@ -17,10 +17,33 @@
   color: blue;
 }
 
+body{
+  background-color: lightgray;
+}
+
 .login-area, .create-login-area{
   width: 300px;
   height: 100px;
   display: block;
+}
+
+.login-header h1{
+  text-align: center;
+}
+
+.create-section, .login-section{
+  position: relative;
+  padding-left: 30px;
+  padding-bottom: 30px;
+  padding-top: 30px;
+  background-color: grey;
+  top: 200px;
+  width: 300px;
+}
+
+#createButton, #loginButton{
+  display: block;
+  margin-top: 20px;
 }
 
 .row h2{

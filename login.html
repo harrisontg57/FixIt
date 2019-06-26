@@ -5,14 +5,29 @@
         <link rel="stylesheet" text="text/css" href="css/style.css">
     </head>
     <body>
-        login page, go back to <a href="index.html">index</a>
-        <div class="login-area">
-            <label for="login-username">Username:</label>
-            <textarea id="login-username" cols="30" rows="1"></textarea>
-            <label for="login-password">Password:</label>
-            <textarea id="login-password" cols="30" rows="1"></textarea>
-            <button onclick="submitUserInfo('login-username', 'login-password')">Login</button>
+        <div class="login-header">
+            <h1>Login Page</h1>
         </div>
+        login page, go back to <a href="index.html">index</a>
+
+        <div class="row">
+            <div class="loginUser-left col">
+                left section
+            </div>
+            <div class="login-area col-6">
+                <div class="login-section mx-auto">
+                    <label for="login-username">Username:</label>
+                    <textarea id="login-username" cols="25" rows="1"></textarea>
+                    <label for="login-password">Password:</label>
+                    <textarea id="login-password" cols="25" rows="1"></textarea>
+                    <button id="loginButton" onclick="submitUserInfo('login-username', 'login-password')">Login</button>
+                </div>
+            </div>
+            <div class="loginUser-right col">
+                right section
+            </div>
+        </div>
+
         <script src="javascript/login.js"></script>
     </body>
 </html>
