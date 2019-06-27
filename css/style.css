@@ -32,10 +32,27 @@
   color: white;
 }
 
+#left-bar a{
+  text-align: center;
+  font-size: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: block;
+}
+
+#left-bar h2{
+  text-align: center;
+  padding-top: 25px;
+}
+
 #open-button{
   position: relative;
   left: 10px;
   height:30px;
+}
+
+.left-section #close-button{
+  color: white;
 }
 
 body{
