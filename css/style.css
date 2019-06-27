@@ -8,13 +8,34 @@
   text-align: center;
 }
 
-.head-left-section {
-  display: block;
+.head-left-section a{
+  text-align: center;
 }
 
-.head-left-section a:link, a:visited {
-  display: block;
-  color: blue;
+.left-section{
+  height: 500px;
+}
+
+#left-bar{
+  height: 500px;
+  width: 0;
+  /*position: fixed;*/
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+#left-bar a:link, a:visited{
+  color: white;
+}
+
+#open-button{
+  position: relative;
+  left: 10px;
+  height:30px;
 }
 
 body{

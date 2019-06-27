@@ -1,41 +1,46 @@
-<head>
-    <title>Fix It</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-</head>
+<html>
+    <head>
+        <title>Fix It</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+    </head>
 
-<body>
-    <div class="heading">
-        <div class="row">
-            <div class="head-left-section col">
-                <a href="login.html">Login</a>
-                <a href="createUser.html">Create Account</a>
-            </div>
+    <body>
+        <div class="heading">
+            <div class="row">
+                <div class="head-left-section col">
+                    <h3>Head Left Section</h3>
+                </div>
 
-            <div class="head-main-section col-6">
-                <h1>Initial Page</h1>
-                <h2>Sub-Heading</h2>
-            </div>
+                <div class="head-main-section col-6">
+                    <h1>Fix It</h1>
+                    <h2>See a broken sign, post it here</h2>
+                </div>
 
-            <div class="head-right-section col">
-                <h3>Head Right Section</h3>
-            </div>
-        </div>
-    </div>
-
-    <div class="body-container">
-        <div class="row">
-            <div class="left-section col">
-                <h2>Left Section</h2>
-            </div>
-
-            <div class="main-section col-6">
-                <h2>Main Section</h2>
-            </div>
-
-            <div class="right-section col">
-                <h2>Right Section</h2>
+                <div class="head-right-section col">
+                    <h3>Head Right Section</h3>
+                </div>
             </div>
         </div>
-    </div>
-</body>
+
+        <div class="body-container">
+            <div class="row">
+                <div class="left-section" id="left-bar">
+                    <button onclick="closeSideNav()" id="close-button">Close</button>
+                    <a href="login.html">Login/</a><a href="createUser.html">Create Account</a>
+                </div>
+                <button onclick="openSideNav()" id="open-button">Open</button>
+
+                <div class="main-section col-6" id="mid-bar">
+                    <h2>Main Section</h2>
+                </div>
+
+                <div class="right-section col" id="right-bar">
+                    <h2>Right Section</h2>
+                </div>
+            </div>
+        </div>
+        <script src="javascript/index.js"></script>
+    </body>
+</html>
+
