@@ -1,11 +1,12 @@
-function submitNewUser(userName, password){
+function submitNewUser(){
     console.log("Beginning of function");
+    var userName = $("#username-create").val();
+    var password = $("#password-create").val();
+
     var newAcc = {
         Username: $(userName).val(),
         Password: $(password).val()
     };
-    console.log(newAcc[Username]);
-    console.log(newAcc[Password]);
 
     loginService.addUser(newAcc, function(data, status){
         console.log("Made it to loginService function");
@@ -15,7 +16,4 @@ function submitNewUser(userName, password){
         }
         console.log(newAcc);
     })
-
-    console.log("Username: " + document.getElementById(userName).value);
-    console.log("Password: " + document.getElementById(password).value);
 }
