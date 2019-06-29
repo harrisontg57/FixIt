@@ -8,8 +8,6 @@ function openSideNav(){
     sideBar.classList.add("col");
     mainSection.classList.remove("col-8");
     mainSection.classList.add("col-6");
-    //rightSection.classList.remove("col-4");
-    //rightSection.classList.add("col");
 }
 
 function closeSideNav(){
@@ -22,6 +20,4 @@ function closeSideNav(){
     sideBar.classList.remove("col");
     mainSection.classList.remove("col-6");
     mainSection.classList.add("col-8");
-    //rightSection.classList.remove("col");
-    //rightSection.classList.add("col-4");
 }
