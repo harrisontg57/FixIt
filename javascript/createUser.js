@@ -1,9 +1,11 @@
 function submitNewUser(userName, password){
     console.log("Beginning of function");
     var newAcc = {
-        "Username": userName.value,
-        "Password": password.value
-    }
+        Username: $(userName).val(),
+        Password: $(password).val()
+    };
+    console.log(newAcc[Username]);
+    console.log(newAcc[Password]);
 
     loginService.addUser(newAcc, function(data, status){
         console.log("Made it to loginService function");
