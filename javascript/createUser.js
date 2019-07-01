@@ -1,28 +1,26 @@
-var ID = 3;
+var ID = loginService.getID(function(data, status){
+    var list = data;
+    ID = list[list.length-1].id;
+});
 
 function submitNewUser(){
     ID++;
-    console.log("Beginning of function");
-    console.log($("#create-username").val());
-    console.log($("#create-password").val());
     var newAcc = {
         id: ID,
         Username: $("#create-username").val(),
         Password: $("#create-password").val()
     };
 
-    $.ajax({
-        type: "POST",
-        url: "http://localhost:3000/users",
-        data: JSON.stringify(newAcc),
-        success: function() {
-            console.log("success ID: " + newAcc.id + " Username: " + newAcc.Username + " Password: " + newAcc.Password);
-        },
-        error: function() {
-            console.log("error posting " + newAcc);
-        },
-        dataType: "json",
-        contentType: "application/json"
+    loginService.getUser(function(data, status){
+        var result = data;
+        for(var i = 0; i < result.length; i++){
+            if(result[i].Username == newAcc.Username){
+                console.log("Username is taken, please choose another Username");
+                return;
+            }
+        }    
+        loginService.addUser(newAcc, function(data, status){
+            console.log("User has been added");
+        });
     });
-    console.log("Made it to the end of the functiom");
 }
