@@ -15,12 +15,13 @@ function submitNewUser(){
         var result = data;
         for(var i = 0; i < result.length; i++){
             if(result[i].Username == newAcc.Username){
-                console.log("Username is taken, please choose another Username");
+                alert("Username is taken, please choose another Username");
+                ID--;
                 return;
             }
         }    
         loginService.addUser(newAcc, function(data, status){
-            console.log("User has been added");
+            alert("User has been added");
         });
     });
 }

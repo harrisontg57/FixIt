@@ -10,10 +10,10 @@ function submitUserInfo(){
         result = data;
         for(var i = 0; i < result.length; i++){
             if(result[i].Username == user.Username && result[i].Password == user.Password){
-                console.log(result[i].id + " " + result[i].Username + " " + result[i].Password);
+                alert("Successful Login: " + result[i].id + " " + result[i].Username + " " + result[i].Password);
                 return;
             }
         }
-        console.log("Username or Password is incorrect");
+        alert("Username or Password is incorrect");
     });
 }
