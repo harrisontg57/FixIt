@@ -1,8 +1,7 @@
-<html>
+<h1>hello, index</h1>
+<!-- <html>
     <head>
         <title>Fix It</title>
-        <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <link rel="stylesheet" type="text/css" href="css/style.css"> -->
     </head>
 
     <body>
@@ -28,9 +27,9 @@
                 <div class="left-section" id="left-bar">
                     <button onclick="closeSideNav()" class="close "id="close-button" aria-label="Close">&times;</button>
                     <h2 style="color: white">Navigation</h2>
-                    <a href="about.html">About</a>
+                    <a routerLink="/about">About</a>
                     <a href="main.html">FixIt Map</a>
-                    <a href="login.html">Login/</a>
+                    <a [routerLink]="[]" (click)="goToLogin()">Login</a>
                     <a href="createUser.html">Create Account</a>
                 </div>
                 <button onclick="openSideNav()" id="open-button">Open</button>
@@ -46,5 +45,4 @@
         </div>
         <script src="../FixIt/FixIt/src/assets/index.js"></script>
     </body>
-</html>
-
+</html> -->
