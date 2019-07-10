@@ -1,8 +1,6 @@
 <html>
     <head>
         <title>Login Page</title>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <link rel="stylesheet" text="text/css" href="css/style.css">
     </head>
     <body>
         <div class="login-header">
@@ -16,10 +14,16 @@
             </div>
             <div class="login-area col-6">
                 <div class="login-section mx-auto">
-                    <label for="login-username">Username:</label>
-                    <textarea id="login-username" cols="25" rows="1"></textarea>
-                    <label for="login-password">Password:</label>
-                    <textarea id="login-password" cols="25" rows="1"></textarea>
+                    <div id="login-username-row">
+                        <label for="login-username">Username:</label>
+                        <textarea id="login-username" cols="25" rows="1"></textarea>
+                    </div>
+
+                    <div id="login-password-row">
+                        <label for="login-password">Password:</label>
+                        <textarea id="login-password" cols="25" rows="1"></textarea>
+                    </div>
+
                     <button id="loginButton" onclick="submitUserInfo()">Login</button>
                 </div>
             </div>

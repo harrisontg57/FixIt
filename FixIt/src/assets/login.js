@@ -2,12 +2,12 @@ var id = 0;
 
 function submitUserInfo(){
     var user = {
-        Username: $("#login-username").val(),
-        Password: $("#login-password").val()
+        Username: $("#inputEmail3").val(),
+        Password: $("#inputPassword3").val()
     };
     console.log(user.Username);
     console.log(user.Password);
-    //var result;
+    // var result;
     // loginService.getUser(function(data, status){
     //     result = data;
     //     for(var i = 0; i < result.length; i++){

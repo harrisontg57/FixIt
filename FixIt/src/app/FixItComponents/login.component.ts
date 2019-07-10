@@ -7,5 +7,12 @@ import { Component } from '@angular/core';
 })
 
 export class LoginComponent{
-
+    submitUserInfo(){
+        var user = {
+            Username: $("#inputEmail3").val(),
+            Password: $("#inputPassword3").val()
+        };
+        console.log(user.Username);
+        console.log(user.Password);
+    }
 }

@@ -1,3 +1,8 @@
+.constHead{
+    text-align: center;
+}
+
 .navBar{
     text-align: center;
+    background-color: beige;
 }
