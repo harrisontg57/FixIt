@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { userInfo } from 'os';
 
 @Component({
     selector: 'create-user',
@@ -13,9 +14,15 @@ export class CreateUserComponent{
         ID++;
         var newAcc = {
             id: ID,
-            Username: $("#inputEmail3").val(),
-            Password: $("#inputPassword3").val()
+            Username: $("#inputUsername").val(),
+            Password: $("#inputPassword").val()
         };
+        if(newAcc.Password != $("#inputRePassword").val()){
+            console.log("passwords dont match")
+        }
+        else{
+            console.log("passwords match")
+        }
         console.log(newAcc.Username);
         console.log(newAcc.Password);
     }

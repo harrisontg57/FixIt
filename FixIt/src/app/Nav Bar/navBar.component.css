@@ -5,4 +5,18 @@
 .navBar{
     text-align: center;
     background-color: beige;
+    border: 2px solid black;
+}
+
+#abt-link, #fixit-link, #login-link, #create-link{
+    border-right:2px solid black;
+    border-radius: 0px;
+}
+
+a{
+    color: black;
+}
+
+a:hover{
+    background-color: paleturquoise;
 }

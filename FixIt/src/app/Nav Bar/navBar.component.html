@@ -4,17 +4,19 @@
 </header>
 
 <div class="navBar">
-    <div class="row">
-        <div class="abt col">
-            <a href="">About</a>
-        </div>
+    <ul class="nav nav-pills">
+        <li class="nav-item">
+            <a class="nav-link" routerLink="" id="abt-link">About</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" routerLink="/fixit" id="fixit-link">FixIt Map</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" routerLink="/login" id="login-link">Login</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" routerLink="/create" id="create-link">Create User</a>
+        </li>
+    </ul>
 
-        <div class="fix col">
-            <a routerLink="/fixit">FixIt</a>
-        </div>
-
-        <div class="logins col">
-            <a routerLink="/login">Login/</a><a routerLink="/create">Create User</a>
-        </div>
-    </div>
 </div>
