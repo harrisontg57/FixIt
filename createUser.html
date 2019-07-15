@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <title>Create Account</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <div class="login-header">
+            <h1>Create Account Page</h1>
+        </div>
+        create user page, go back to <a href="index.html">index</a>
+        <div class=row>
+            <div class="createUser-left col">
+                left side
+            </div>
+            <div class="create-login-area col-6">    
+                <div class="create-section mx-auto">
+                    <label for="login-username" id="username-create">Username:</label>
+                    <textarea id="create-username" cols="25" rows="1"></textarea>
+                    <label for="login-password" id="password-create">Password:</label>
+                    <textarea id="create-password" cols="25" rows="1"></textarea>
+                    <button id="createButton" onclick="submitNewUser()">Create Account</button>
+                </div>            
+            </div>
+            <div class="createUser-right col">
+                right side
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+        <script src="javascript/loginService.js"></script>
+        <script src="javascript/createUser.js"></script>
+    </body>
+</html>

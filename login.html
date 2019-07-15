@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title>Login Page</title>
+    </head>
+    <body>
+        <div class="login-header">
+            <h1>Login Page</h1>
+        </div>
+        login page, go back to <a href="index.html">index</a>
+
+        <div class="row">
+            <div class="loginUser-left col">
+                left section
+            </div>
+            <div class="login-area col-6">
+                <div class="login-section mx-auto">
+                    <div id="login-username-row">
+                        <label for="login-username">Username:</label>
+                        <textarea id="login-username" cols="25" rows="1"></textarea>
+                    </div>
+
+                    <div id="login-password-row">
+                        <label for="login-password">Password:</label>
+                        <textarea id="login-password" cols="25" rows="1"></textarea>
+                    </div>
+
+                    <button id="loginButton" onclick="submitUserInfo()">Login</button>
+                </div>
+            </div>
+            <div class="loginUser-right col">
+                right section
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+        <script src="javascript/loginService.js"></script>
+        <script src="javascript/login.js"></script>
+    </body>
+</html>
