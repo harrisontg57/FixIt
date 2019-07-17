@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { userInfo } from 'os';
 
 @Component({
     selector: 'create-user',
