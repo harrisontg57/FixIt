@@ -6,9 +6,9 @@ import { CreateUserComponent } from './FixItComponents/createUser.component';
 import { FixItComponent } from './FixItComponents/FixIt Main/fixit.component';
 
 const routes: Routes = [
-  {path: 'login', component: LoginComponent},
+  {path: 'users/login', component: LoginComponent},
   {path: 'index', component: IndexComponent},
-  {path: 'create', component: CreateUserComponent},
+  {path: 'users/create', component: CreateUserComponent},
   {path: 'fixit', component: FixItComponent}
 ];
 

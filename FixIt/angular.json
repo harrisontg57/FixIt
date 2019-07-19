@@ -20,7 +20,6 @@
             "tsConfig": "tsconfig.app.json",
             "aot": false,
             "assets": [
-              "src/favicon.ico",
               "src/assets"
             ],
             "styles": ["node_modules/bootstrap/dist/css/bootstrap.min.css",
@@ -60,7 +59,8 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "FixIt:build"
+            "browserTarget": "FixIt:build",
+            "proxyConfig": "./proxy.conf.json"
           },
           "configurations": {
             "production": {

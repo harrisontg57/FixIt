@@ -1,21 +1,39 @@
-var id = 0;
+var mysql = require('mysql');
 
-function submitUserInfo(){
-    var user = {
-        Username: $("#inputEmail3").val(),
-        Password: $("#inputPassword3").val()
-    };
-    console.log(user.Username);
-    console.log(user.Password);
-    // var result;
-    // loginService.getUser(function(data, status){
-    //     result = data;
-    //     for(var i = 0; i < result.length; i++){
-    //         if(result[i].Username == user.Username && result[i].Password == user.Password){
-    //             alert("Successful Login: " + result[i].id + " " + result[i].Username + " " + result[i].Password);
-    //             return;
-    //         }
-    //     }
-    //     alert("Username or Password is incorrect");
-    // });
+var conn = mysql.createConnection({
+  host: 'localhost',
+  user: 'root',
+  password: 'root',
+  database: 'users',
+  port: 8889
+})
+
+var pool  = mysql.createPool({
+  connectionLimit : 10,
+  host            : 'localhost',
+  user            : 'root',
+  password        : 'root',
+  database        : 'users',
+  port: 8889
+});
+
+conn.connect(function(err){
+  if(err) throw err;
+  console.log("Connected!");
+})
+
+function checkCredentials(user){
+    console.log("made it to this function");
+    var res = queryCredentials(user);
+    console.log(res);
+}
+
+function queryCredentials(user){
+  pool.query(
+    `
+    SELECT *
+    FROM users_table
+    WHERE username=$username AND password=$password
+    `, {$username:user.username, $password:user.password}
+    );
 }
