@@ -1,30 +1,45 @@
-import { Injectable, Input } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { LoginUser } from '../login.component'
+import { Router } from '@angular/router';
 
 @Injectable()
 export class UserService{
 
     user: User
-    //@HttpHandler()
-    constructor(private http: HttpClient){ }
+    constructor(private http: HttpClient, private router: Router){ }
 
-    // register(user: User, callback){
-    //     this.http.post('http://localhost:3000/users', user).subscribe(res=>{
-    //         callback(res)
-    //     })
-    // }
+    url = "http://localhost:3000";
 
-    login(user: LoginUser, callback){
-        this.http.post('/api/v1/users/login', user).subscribe(res=>{
-            console.log(res)
-            callback(res)
-        },
-        err => {
-            callback(undefined)
-        })
+    getUsers(){
+        return this.http.get(`${this.url}/users`);
     }
 
+    loginUser(User){
+        this.getUsers();
+        this.http.post(`${this.url}/users`, User).subscribe(
+            res=>{
+                console.log(res);
+                this.router.navigateByUrl('/users');
+            },
+            err=>{
+                console.log("error occured: ", err);
+            }
+        )
+    }
+
+    registerUser(User){
+        this.http.post(`${this.url}/users`, User)
+        .subscribe(
+            res=>{
+                console.log(res);
+                this.router.navigateByUrl('/users');
+            },
+            err=>{
+                console.log('Error occured:' , err);
+            }
+        );
+    }
 }
 
 export class User{
@@ -35,8 +50,3 @@ export class User{
     username: string
     password: string
 }
-
-// export class LoginUser{
-//     username: string
-//     password: string
-// }

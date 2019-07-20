@@ -1,72 +1,42 @@
-const bcrypt = require('bcryptjs');
+var express = require('express');
+var router = express.Router();
+var bodyParser = require('body-parser');
+router.use(bodyParser.json());
+var User = require('./users');
 
-var sqlite3 = require('sqlite3').verbose();
-var db = new sqlite3.Database('./node-stuff/users.db');
-
-var service = {
-
-    findUser: function(username, callback){
-
-        db.get('SELECT * FROM users WHERE username=$username',{$username:username}, function(err, row){
-            if (err){
-                callback()
-            } else{
-                callback(row)
-            }
-        });
-    },
-
-    registerUser: function(user, callback){
-        // check that all fields are present
-        if (!user.name || !user.email || !user.password || !user.password2){
-            callback(undefined);
-            return;
+router.get('/', function (req, res) {
+    User.getUsers(function(err,rows){
+        if(err) {
+            res.status(400).json(err);
         }
+        else
+        {
+            res.json(rows);
+        }
+    });
+});
 
-        this.findUser(user.username, (foundUser) =>{
-            if (foundUser){
-                callback(undefined);
-                return
-            }
+router.post('/', function(req, res){
+    User.loginUser(function(err, rows){
+        if(err){
+            res.status(400).json(err);
+        }
+        else{
+            res.json(rows);
+        }
+    });
+});
 
-            // create a password with a salt
-            bcrypt.genSalt(10, (err, salt) => {
-                bcrypt.hash(user.password, salt, (err, hash) => {
-                if (err) throw err;
-                    user.password = hash;
-                    delete user.password2;
-                    user.id = id++;
-                    user.status = 'user';
-                    // save the user to db
-                    db.run(`INSERT INTO users(firstName, lastName, id, status, email, username, password)
-                    VALUES ($firstName, $lastName, $id, $status, $email, $username, $password)`,{
-                      $firstName: user.firstName,
-                      $lastName: user.lastName,
-                      $id: user.id,
-                      $email: user.email,  
-                      $username: user.username, 
-                      $password: user.password
-                    }, function(err){
-                        if (err){
-                            callback(undefined);
-                            return;
-                        }
-                        callback(this.lastID)
-                    })
-                });
-            });
-        })
-    },
+router.post('/', function (req, res) {
+    User.registerUser(req.body,function(err,count){
+        if(err)
+        {
+            res.status(400).json(err);
+        }
+        else{
+            res.json(req.body);
+        }
+    });
+});
 
-    getUsers: function(callback){
-        db.all('SELECT * FROM users', function(err, rows){
-            if (err){
-                callback()
-            } else{
-                callback(rows)
-            }
-        })
-    }
-}
-
-module.exports = service;
+module.exports = router;
