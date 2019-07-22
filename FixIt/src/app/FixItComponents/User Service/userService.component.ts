@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { LoginUser } from '../login.component'
 import { Router } from '@angular/router';
 
 @Injectable()
@@ -19,20 +18,23 @@ export class UserService{
         this.getUsers();
         this.http.post(`${this.url}/users`, User).subscribe(
             res=>{
-                console.log(res);
+                console.log("Successful Login");
+                console.log("account:", res);
                 this.router.navigateByUrl('/users');
+
             },
             err=>{
-                console.log("error occured: ", err);
+                console.log("Error occured: ", err);
             }
         )
     }
 
     registerUser(User){
-        this.http.post(`${this.url}/users`, User)
-        .subscribe(
+        this.getUsers();
+        this.http.post(`${this.url}/users`, User).subscribe(
             res=>{
                 console.log(res);
+                console.log("Account registered")
                 this.router.navigateByUrl('/users');
             },
             err=>{

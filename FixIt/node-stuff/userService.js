@@ -12,29 +12,32 @@ router.get('/', function (req, res) {
         else
         {
             res.json(rows);
+            console.log("getPost",rows);
         }
     });
 });
 
-router.post('/', function(req, res){
+router.post('/users', function(req, res){
     User.loginUser(function(err, rows){
         if(err){
             res.status(400).json(err);
         }
         else{
             res.json(rows);
+            console.log("loginPost",rows);
         }
     });
 });
 
-router.post('/', function (req, res) {
-    User.registerUser(req.body,function(err,count){
+router.post('/users', function (req, res) {
+    User.registerUser(function(err,rows){
         if(err)
         {
             res.status(400).json(err);
         }
         else{
-            res.json(req.body);
+            res.json("post",rows);
+            console.log("Post: ",rows);
         }
     });
 });
