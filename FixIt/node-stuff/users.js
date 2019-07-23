@@ -3,7 +3,7 @@ var db = require('./index');
 var User = {
   getUsers: function(callback)
   {
-    return db.query(`SELECT *FROM users_table;`, callback)
+    return db.query(`SELECT * FROM users_table;`, callback);
   },
   loginUser: function(User, callback)
   {
@@ -13,8 +13,8 @@ var User = {
   },
   registerUser: function(User, callback)
   {
-    return db.query('INSERT INTO users_table(first_name, last_name, email, username, password) VALUES($firstname, $lastname, $email, $username, $password)',
-    {$firstname: User.firstname, $lastname: User.lastname, $Email: User.email, $username: User.username, $password: User.password}, callback)
+    return db.query(`INSERT INTO users_table(first_name, last_name, email, username, password) VALUES(?, ?, ?, ?, ?);`,
+    [User.firstName, User.lastName, User.email, User.username, User.password], callback);
   }
 }
 

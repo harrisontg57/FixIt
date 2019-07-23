@@ -5,23 +5,30 @@ import { Router } from '@angular/router';
 @Injectable()
 export class UserService{
 
-    user: User
+    User: User
     constructor(private http: HttpClient, private router: Router){ }
 
-    url = "http://localhost:3000";
+    url = "http://localhost:5000/users";
+    
 
     getUsers(){
-        return this.http.get(`${this.url}/users`);
+        return this.http.get(`${this.url}`).subscribe(
+            res=>{
+                console.log(res);
+            },
+            err=>{
+                console.log(err);
+            }
+        );
     }
 
-    loginUser(User){
+    loginUser(User:User){
         this.getUsers();
-        this.http.post(`${this.url}/users`, User).subscribe(
+        //console.log(this.url);
+        return this.http.post(`${this.url}`, User).subscribe(
             res=>{
                 console.log("Successful Login");
                 console.log("account:", res);
-                this.router.navigateByUrl('/users');
-
             },
             err=>{
                 console.log("Error occured: ", err);
@@ -29,13 +36,14 @@ export class UserService{
         )
     }
 
-    registerUser(User){
+    registerUser(User:User){
+        console.log("register user function");
+
         this.getUsers();
-        this.http.post(`${this.url}/users`, User).subscribe(
+        return this.http.post(`${this.url}`, User,{responseType: 'text'}).subscribe(
             res=>{
-                console.log(res);
+                console.log("the result", res);
                 console.log("Account registered")
-                this.router.navigateByUrl('/users');
             },
             err=>{
                 console.log('Error occured:' , err);
@@ -46,8 +54,8 @@ export class UserService{
 
 export class User{
     id: number
-    firstName: string
-    lastName: string
+    firstname: string
+    lastname: string
     email: string
     username: string
     password: string

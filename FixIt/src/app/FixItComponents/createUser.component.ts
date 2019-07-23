@@ -17,8 +17,8 @@ export class CreateUserComponent{
     submitNewUser(){
         this.user = {
             id: undefined,
-            firstName: String($('#inputFirstname').val()),
-            lastName: String($('#inputLastname').val()),
+            firstname: String($('#inputFirstname').val()),
+            lastname: String($('#inputLastname').val()),
             email: String($('#inputEmail').val()),
             username: String($('#inputUsername').val()),
             password: String($('#inputPassword').val())

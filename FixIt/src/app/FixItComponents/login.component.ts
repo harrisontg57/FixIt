@@ -19,8 +19,8 @@ export class LoginComponent{
     submitUserInfo(){
         this.user = {
             id: undefined,
-            firstName: undefined,
-            lastName: undefined,
+            firstname: undefined,
+            lastname: undefined,
             email: undefined,
             username: String($('#inputUsername').val()),
             password: String($('#inputPassword').val())
