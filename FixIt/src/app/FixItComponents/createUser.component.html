@@ -10,6 +10,20 @@
             <div class="login-area col-6">
                 <div class="login-section">
                     <form>
+                        <div class="row form-group">
+                            <label for="inputFirstname" class="col-sm-2 col-lg-2">First Name</label>
+                            <input type="text" class="col-6 form-control" id="inputFirstname" placeholder="First Name">
+                            <!-- <label for="inputLastname" class="col-sm-2 col-lg-2">Last Name</label>
+                            <input type="text" class="col-6 form-control" id="inputLastname" placeholder="Last Name">                               -->
+                        </div>
+                        <div class="row form-group">
+                            <label for="inputLastname" class="col-sm-2 col-lg-2">Last Name</label>
+                            <input type="text" class="col-6 form-control" id="inputLastname" placeholder="Last Name">                            
+                        </div>
+                        <div class="form-group">
+                            <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
+                            <input type="email" class="form-control" id="inputEmail" placeholder="Email">                            
+                        </div>
                         <div class="form-group">
                             <label for="inputUsername" class="col-sm-2 col-form-label">Username</label>
                             <input type="email" class="form-control" id="inputUsername" placeholder="Username">
@@ -18,10 +32,10 @@
                             <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
                             <input type="password" class="form-control" id="inputPassword" placeholder="Password">
                         </div>
-                        <div class="form-group">
+                        <!-- <div class="form-group">
                             <label for="inputRePassword" class="col col-form-label">Re-Enter Password</label>
                             <input type="password" class="form-control" id="inputRePassword" placeholder="Re-Enter Password">
-                        </div>
+                        </div> -->
                     </form>
                     <button (click)="submitNewUser()" type="submit" class="btn btn-primary">Submit</button>                
                 </div>
@@ -32,6 +46,5 @@
         </div>
 
         <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-        <script src="../../assets/login.js"></script>
     </body>
 </html>

@@ -8,6 +8,8 @@ import { IndexComponent } from '../app/FixItComponents/index.component';
 import { NavBarComponent } from '../app/Nav Bar/navBar.component';
 import { CreateUserComponent } from './FixItComponents/createUser.component';
 import { FixItComponent } from './FixItComponents/FixIt Main/fixit.component';
+import { UserService } from './FixItComponents/User Service/userService.component';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,9 +22,10 @@ import { FixItComponent } from './FixItComponents/FixIt Main/fixit.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [HttpClient, UserService, HttpClientModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

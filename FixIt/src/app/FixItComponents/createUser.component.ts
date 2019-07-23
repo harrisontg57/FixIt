@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { userInfo } from 'os';
+import { Component, Injectable } from '@angular/core';
+import { User, UserService } from './User Service/userService.component';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'create-user',
@@ -7,23 +8,23 @@ import { userInfo } from 'os';
     styleUrls: ['../FixItComponents/createUser.component.css']
 })
 
+@Injectable()
 export class CreateUserComponent{
+    user : User; 
+
+    constructor(private userService: UserService, private router: Router) { }
     
     submitNewUser(){
-        var ID = 0;
-        ID++;
-        var newAcc = {
-            id: ID,
-            Username: $("#inputUsername").val(),
-            Password: $("#inputPassword").val()
-        };
-        if(newAcc.Password != $("#inputRePassword").val()){
-            console.log("passwords dont match")
+        this.user = {
+            id: undefined,
+            firstname: String($('#inputFirstname').val()),
+            lastname: String($('#inputLastname').val()),
+            email: String($('#inputEmail').val()),
+            username: String($('#inputUsername').val()),
+            password: String($('#inputPassword').val())
         }
-        else{
-            console.log("passwords match")
-        }
-        console.log(newAcc.Username);
-        console.log(newAcc.Password);
+
+        this.userService.registerUser(this.user);
+
     }
-}
+}   

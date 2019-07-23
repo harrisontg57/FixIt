@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import { Injectable } from '@angular/core';
+import { UserService } from './User Service/userService.component';
+import { Router } from '@angular/router';
+import { User } from './User Service/userService.component';
 
 @Component({
     selector: "login",
@@ -6,13 +10,21 @@ import { Component } from '@angular/core';
     styleUrls: ['../FixItComponents/login.component.css']
 })
 
+@Injectable()
 export class LoginComponent{
+    user : User; 
+
+    constructor(private userService: UserService, private router: Router) { }
+
     submitUserInfo(){
-        var user = {
-            Username: $("#inputUsername").val(),
-            Password: $("#inputPassword").val()
-        };
-        console.log(user.Username);
-        console.log(user.Password);
+        this.user = {
+            id: undefined,
+            firstname: undefined,
+            lastname: undefined,
+            email: undefined,
+            username: String($('#inputUsername').val()),
+            password: String($('#inputPassword').val())
+        }
+        this.userService.loginUser(this.user);
     }
 }
