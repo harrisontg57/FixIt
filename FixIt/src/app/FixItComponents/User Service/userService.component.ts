@@ -23,8 +23,7 @@ export class UserService{
     }
 
     loginUser(User:User){
-        this.getUsers();
-        //console.log(this.url);
+        console.log("logging in user function")
         return this.http.post(`${this.url}`, User).subscribe(
             res=>{
                 console.log("Successful Login");
@@ -39,7 +38,6 @@ export class UserService{
     registerUser(User:User){
         console.log("register user function");
 
-        this.getUsers();
         return this.http.post(`${this.url}`, User,{responseType: 'text'}).subscribe(
             res=>{
                 console.log("the result", res);

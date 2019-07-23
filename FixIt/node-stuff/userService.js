@@ -13,21 +13,26 @@ router.get('/', function (req, res) {
         else
         {
             res.json(rows);
-            console.log("getPost",rows);
+            console.log("Users: ",rows);
         }
     });
 });
 
-router.post('/users', function(req, res){
+router.post('/', function(req, res){
     console.log("validating info...")
     User.loginUser(req.body, function(err, rows){
         if(err){
             res.status(400).json(err);
         }
         else{
-            res.json(req.body);
-            console.log(user);
-            console.log("loginPost",rows);
+            if(rows.length<1){
+                console.log("Account not found")
+            }else{
+                console.log("account found");
+                res.json(req.body);
+                console.log("loginPost",rows);
+            }
+
         }
     });
 });
@@ -41,7 +46,6 @@ router.post('/', function (req, res) {
         }
         else{
             res.json(req.body);
-            //console.log(user);
             console.log("Post: ",rows);
         }
     });
