@@ -10,6 +10,7 @@ import { CreateUserComponent } from './FixItComponents/createUser.component';
 import { FixItComponent } from './FixItComponents/FixIt Main/fixit.component';
 import { UserService } from './FixItComponents/User Service/userService.component';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { ChatComponent } from './FixItComponents/chat.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
     IndexComponent,
     NavBarComponent,
     CreateUserComponent,
-    FixItComponent
+    FixItComponent,
+    ChatComponent
   ],
   imports: [
     BrowserModule,

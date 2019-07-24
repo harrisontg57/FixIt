@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <title>Login Page</title>
+    </head>
+    <body>
+        <div class="row">
+            <div class="chat-left col">
+                <!-- left section -->
+            </div>
+            <div class="chat-area col-6">
+            <div class="chat-log col-12">
+                <ul class="list-group">
+                    <li class="list-group-item">{{ four | date:'shortTime' }} {{user4}}::   "Hello, World!"</li>
+                    <li class="list-group-item">{{ three | date:'shortTime' }}  {{user3}}::   50th and Maple St. is terrible!</li>
+                    <li class="list-group-item">{{ two | date:'shortTime' }} {{user2}}::   Agreed 100%..</li>
+                    <li class="list-group-item">{{ one | date:'shortTime' }} {{user4}}::   What will you do about it?</li>
+                    <li class="list-group-item">{{ newTime | date:'shortTime' }} {{message}}</li>
+                </ul>
+            </div>
+                <div class="chat-section">
+                    <form class="inline-form">
+                        <div class="form-group">
+                            <label class="sr-only" for="chatUser">Name:</label>
+                            <input type="text" class="form-control" id="chatUser" placeholder="ChatUser">
+                           
+                        </div>
+                        <div class="form-group">
+                            <label class="sr-only" for="message">Message:</label>
+                            <textarea class="form-control" rows="5" id="comment"></textarea>
+                        </div>
+                    </form>
+                    <button (click)="submitUserChat()" type="submit" class="btn btn-primary">Send</button>                
+                </div>
+            </div>
+            <div class="chat-right col">
+                <!-- right section -->
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+        <!-- <script src="../../../node-stuff/login.js"></script> -->
+    </body>
+</html>
