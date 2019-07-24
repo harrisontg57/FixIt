@@ -18,7 +18,7 @@ router.get('/', function (req, res) {
     });
 });
 
-router.post('/', function(req, res){
+router.post('/users', function(req, res){
     console.log("validating info...")
     User.loginUser(req.body, function(err, rows){
         if(err){
@@ -27,9 +27,11 @@ router.post('/', function(req, res){
         else{
             if(rows.length<1){
                 console.log("Account not found")
+                // res.send({"code":204,
+                // "success":"Email or password does not match"});
             }else{
                 console.log("account found");
-                res.json(req.body);
+                //res.json(req.body);
                 console.log("loginPost",rows);
             }
 
@@ -45,7 +47,7 @@ router.post('/', function (req, res) {
             res.status(400).json(err);
         }
         else{
-            res.json(req.body);
+            //res.json(req.body);
             console.log("Post: ",rows);
         }
     });

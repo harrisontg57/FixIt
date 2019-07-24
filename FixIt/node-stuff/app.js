@@ -18,7 +18,7 @@ app.use(express.json());
 app.post("/users", function(req, res){
     console.log("Posting... ", req.body);
     db.query('INSERT INTO users_table(first_name, last_name, email, username, password) VALUES($firstname, $lastname, $email, $username, $password)',
-    {$firstname: req.body.firstName, $lastname: req.body.lastName, $Email: req.body.email, $username: req.body.username, $password: req.body.password});
+    {$firstname: req.body.firstname, $lastname: req.body.lastname, $Email: req.body.email, $username: req.body.username, $password: req.body.password});
     res.send("post sent");
     
 });

@@ -14,7 +14,7 @@ var User = {
   registerUser: function(User, callback)
   {
     return db.query(`INSERT INTO users_table(first_name, last_name, email, username, password) VALUES(?, ?, ?, ?, ?);`,
-    [User.firstName, User.lastName, User.email, User.username, User.password], callback);
+    [User.firstname, User.lastname, User.email, User.username, User.password], callback);
   }
 }
 

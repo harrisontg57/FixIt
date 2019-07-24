@@ -25,6 +25,15 @@ export class LoginComponent{
             username: String($('#inputUsername').val()),
             password: String($('#inputPassword').val())
         }
-        this.userService.loginUser(this.user);
+        this.userService.loginUser(this.user, function(ans){
+            var answer = ans;
+            console.log(answer);
+            if(String(answer) == "found"){
+                alert("Login Successful!");
+            }
+            else{
+                alert("Username or Password was incorrect");
+            }
+            });
     }
 }
