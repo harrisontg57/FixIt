@@ -1,4 +1,7 @@
-#gmap { height: 720px; width: 720px; }
-#center { padding-left: 250px;}
-#cond { width: 500px;}
-#form {padding-left: 110px;}
+#gmap { height: 200%; width: 100%; }
+/*#center { padding-left: 250px;}*/
+#cond { width: 100%;}
+#form {padding-left: 10%;
+        padding-right: 10%;
+        padding-top: 5%;
+    }

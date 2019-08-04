@@ -18,7 +18,7 @@ router.get('/', function (req, res) {
     });
 });
 
-router.post('/', function(req, res){
+router.post('/users', function(req, res){
     console.log("validating info...")
     User.loginUser(req.body, function(err, rows){
         if(err){
@@ -32,7 +32,16 @@ router.post('/', function(req, res){
                 res.json(req.body);
                 console.log("loginPost",rows);
             }
-
+        }
+    });
+    User.alterLogin(req.body, function(err, rows){
+        console.log("altering loggedIn")
+        if(err){
+            res.status(400).json(err);
+        }
+        else{
+            res.json(req.body);
+            console.log("loggedIn ", rows);
         }
     });
 });

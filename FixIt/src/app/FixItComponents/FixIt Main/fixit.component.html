@@ -4,13 +4,6 @@
     <meta name="viewport" content="initial-scale=1.0">
     <meta charset="utf-8">
     <style>
-      /* Always set the map height explicitly to define the size of the div
-       * element that contains the map. */
-      #map {
-        height: 65%;
-        width: 50%;
-      }
-      /* Optional: Makes the sample page fill the window. */
       html, body {
         height: 100%;
         margin: 0;
@@ -19,20 +12,35 @@
     </style>
   </head>
   <body>
-    <div id="center">
+    <div class="row">
+    <div class="fixit-left col-1 col-sm-1 col-lg-3">
+        <!-- left section -->
+    </div>
+    <div class="col-10 col-sm-10 col-lg-6" id="center">
     <div id="gmap"></div>
+    <!-- <input id="pac-input" class="controls" type="text" placeholder="Search Box"> -->
     <div id="form">
-      <form>
+      <form id="form-id">
         Sign Type:<br>
-        <input type="radio" name="signType" value="STOP"> STOP
-        <input type="radio" name="signType" value="SPEED"> SPEED LIMIT
-        <input type="radio" name="signType" value="STREET"> STREET SIGN <br>
+        <input id="stop" type="radio" name="signType" value="STOP"> STOP
+        <input id="speed" type="radio" name="signType" value="SPEED"> SPEED LIMIT
+        <input id="street" type="radio" name="signType" value="STREET"> STREET SIGN <br>
         <br>
         Condition:<br>
-        <input id="cond" type="text" name="condition" value="Describe the sign's condition">
+        <input id="cond" type="text" name="condition" placeholder="Describe the sign's condition">
         <br><br>
       </form>
+      <div id="coords">
+        <label for="lat">Latitude: </label>
+        <p id="lat"></p>  
+        <label for="lng">Longitude: </label>
+        <p id="lng"></p>
+      </div>
       <button (click)="submitNewSign()" type="submit" class="btn btn-primary">Submit</button>
+    </div>
+    </div>
+    <div class="fixit-right col-1 col-sm-1 col-lg-3">
+        <!-- right section -->
     </div>
     </div>
   </body>

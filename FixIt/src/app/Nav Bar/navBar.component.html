@@ -1,25 +1,43 @@
-<header class="constHead">
-    <h1>FixIt</h1>
-    <h2>See a Broken Sign, Put it Here</h2>
+<header class="row constHead">
+    <div class="leftHead col-3">
+
+    </div>
+    <div class="mainHead col-6">
+        <h1>FixIt</h1>
+        <h2>See a Broken Sign, Put it Here</h2>
+    </div>
+    <div class="rightHead col-3" id="login-status">
+        <div class="row">
+            <label for="user-info">User: </label>
+            <p id="user-info">Guest</p>
+        </div>
+        <div class="row">
+            <label for="status-info">Status: </label>
+            <p id="status-info">not logged in</p>
+        </div>
+
+     
+    </div>
+
 </header>
 
 <div class="navBar">
     <ul class="nav nav-pills">
-        <li class="nav-item">
-            <a class="nav-link" routerLink="" id="abt-link">About</a>
+        <li class="nav-item col-lg-3">
+            <a class="nav-link" routerLink="/index" id="abt-link">About</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item col-lg-2">
             <a class="nav-link" routerLink="/fixit" id="fixit-link">FixIt Map</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item col-lg-2">
             <a class="nav-link" routerLink="/login" id="login-link">Login</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item col-lg-2">
             <a class="nav-link" routerLink="/create" id="create-link">Create User</a>
         </li>
-        <li class="nav-item">
-                <a class="nav-link" routerLink="/chat" id="chat-link">Chat</a>
-            </li>
+        <li class="nav-item col-lg-3">
+            <a class="nav-link" routerLink="/chat" id="chat-link">Chat</a>
+        </li>
     </ul>
 
 </div>

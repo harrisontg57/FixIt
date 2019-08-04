@@ -9,13 +9,9 @@
             </div>
             <div class="chat-area col-6">
             <div class="chat-log col-12">
-                <ul class="list-group">
-                    <li class="list-group-item">{{ four | date:'shortTime' }} {{user4}}::   "Hello, World!"</li>
-                    <li class="list-group-item">{{ three | date:'shortTime' }}  {{user3}}::   50th and Maple St. is terrible!</li>
-                    <li class="list-group-item">{{ two | date:'shortTime' }} {{user2}}::   Agreed 100%..</li>
-                    <li class="list-group-item">{{ one | date:'shortTime' }} {{user4}}::   What will you do about it?</li>
-                    <li class="list-group-item">{{ newTime | date:'shortTime' }} {{message}}</li>
+                <ul class="list-group" id="chts">
                 </ul>
+                <span id="save" style="display:none;"></span>
             </div>
                 <div class="chat-section">
                     <form class="inline-form">

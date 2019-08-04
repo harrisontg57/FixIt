@@ -14,8 +14,7 @@
     "typeRoots": [
       "node_modules/@types",
       "jquery",
-      "sqlite3",
-      "googlemaps"
+      "sqlite3"
     ],
     "lib": [
       "es2018",

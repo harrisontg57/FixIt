@@ -10,7 +10,10 @@ import { CreateUserComponent } from './FixItComponents/createUser.component';
 import { FixItComponent } from './FixItComponents/FixIt Main/fixit.component';
 import { UserService } from './FixItComponents/User Service/userService.component';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
+//import { HttpModule } from '@angular//http';
 import { ChatComponent } from './FixItComponents/chat.component';
+import { MapService } from './FixItComponents/Map Service/mapService.component';
+import { ChatService } from './FixItComponents/ChatService/chat-service.service';
 
 @NgModule({
   declarations: [
@@ -26,8 +29,9 @@ import { ChatComponent } from './FixItComponents/chat.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule
+    //HttpModule
   ],
-  providers: [HttpClient, UserService, HttpClientModule],
+  providers: [HttpClient, UserService, HttpClientModule, MapService, NavBarComponent, LoginComponent, ChatService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
